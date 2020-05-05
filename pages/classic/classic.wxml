@@ -1,0 +1,11 @@
+<!--pages/classic/classic.wxml-->
+<view class="container">
+  <view class="header">
+    <v-epsoide class="epsoide" index="{{classic.index}}"></v-epsoide>
+    <v-like bind:like="onLike" like="{{classic.like_status}}" count="{{classic.fav_nums}}"></v-like>
+  </view>
+  <v-movie hidden="{{classic.type != 100}}" class="movie" content="{{classic.content}}" img="{{classic.img}}"></v-movie>
+  <v-music src="{{classic.url}}" title="{{classic.title}}" wx:if="{{classic.type == 200}}" class="movie" content="{{classic.content}}" img="{{classic.img}}"></v-music>
+  <v-essay hidden="{{classic.type != 300}}" class="movie" content="{{classic.content}}" img="{{classic.img}}"></v-essay>
+  <v-nav title="{{classic.title}}" first="{{first}}" latest="{{latest}}" class="nav" bind:left="onNext" bind:right="onPrevious"></v-nav>
+</view>
